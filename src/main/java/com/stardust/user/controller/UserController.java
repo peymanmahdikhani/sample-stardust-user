@@ -5,14 +5,12 @@ import com.stardust.core.service.StardustService;
 import com.stardust.user.repository.UserEntity;
 import com.stardust.user.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Created by Peyman Mahdikhani on 11/24/2020.
  */
 @RestController
-@RequestMapping("/user")
 @RequiredArgsConstructor
 public class UserController extends StardustController<UserListModel, UserDetailModel, UserEntity, Long> {
     private final UserService userService;
@@ -20,10 +18,5 @@ public class UserController extends StardustController<UserListModel, UserDetail
     @Override
     protected StardustService<UserListModel, UserDetailModel, UserEntity, Long> getService() {
         return userService;
-    }
-
-    @Override
-    protected String getDustName() {
-        return "Person";
     }
 }

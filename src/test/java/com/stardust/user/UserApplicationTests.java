@@ -41,9 +41,4 @@ class UserApplicationTests extends StardustTester<UserListModel, UserDetailModel
         Long stardustEntityId = userService.createStardustEntity(userDetailModel);
         return userService.getStardustEntity(stardustEntityId);
     }
-
-    @Override
-    protected String getDustName() {
-        return "user";
-    }
 }
