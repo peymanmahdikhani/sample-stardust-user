@@ -12,5 +12,5 @@ import com.stardust.user.repository.UserEntity;
  * <p>
  * user UserService - 11/20/2020
  */
-public interface UserService extends StardustService<UserListModel, UserDetailModel, UserEntity, Long> {
+public interface UserService extends StardustService<UserListModel, UserDetailModel, UserEntity> {
 }

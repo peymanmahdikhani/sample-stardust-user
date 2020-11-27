@@ -18,17 +18,17 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @RequiredArgsConstructor
-public class UserServiceImpl extends StardustServiceImpl<UserListModel, UserDetailModel, UserEntity, Long> implements UserService {
+public class UserServiceImpl extends StardustServiceImpl<UserListModel, UserDetailModel, UserEntity> implements UserService {
     private final UserMapper userMapper;
     private final UserRepository userRepository;
 
     @Override
-    public StardustMapper<UserListModel, UserDetailModel, UserEntity, Long> getStardustObjectMapper() {
+    public StardustMapper<UserListModel, UserDetailModel, UserEntity> getStardustObjectMapper() {
         return userMapper;
     }
 
     @Override
-    public StardustRepository<UserEntity, Long> getStardustRepository() {
+    public StardustRepository<UserEntity> getStardustRepository() {
         return userRepository;
     }
 }

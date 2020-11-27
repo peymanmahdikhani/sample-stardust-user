@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequiredArgsConstructor
-public class UserController extends StardustController<UserListModel, UserDetailModel, UserEntity, Long> {
+public class UserController extends StardustController<UserListModel, UserDetailModel, UserEntity> {
     private final UserService userService;
 
     @Override
-    protected StardustService<UserListModel, UserDetailModel, UserEntity, Long> getService() {
+    protected StardustService<UserListModel, UserDetailModel, UserEntity> getService() {
         return userService;
     }
 }

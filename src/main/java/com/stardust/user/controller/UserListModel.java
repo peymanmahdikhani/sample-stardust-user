@@ -8,6 +8,7 @@ import lombok.experimental.SuperBuilder;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
+import java.util.UUID;
 
 /**
  * Created by Peyman Mahdikhani on 11/24/2020.
@@ -16,11 +17,11 @@ import javax.validation.constraints.Null;
 @Setter
 @SuperBuilder
 @NoArgsConstructor
-public class UserListModel extends StardustListMode<Long> {
+public class UserListModel extends StardustListMode {
     @NotNull
     private String username;
     @Null
     private String password;
     @NotNull
-    private Long personId;
+    private UUID personId;
 }

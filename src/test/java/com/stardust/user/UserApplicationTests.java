@@ -12,16 +12,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.UUID;
+
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
-class UserApplicationTests extends StardustTester<UserListModel, UserDetailModel, UserEntity,Long> {
+class UserApplicationTests extends StardustTester<UserListModel, UserDetailModel, UserEntity> {
     @Autowired
     private UserRepository userRepository;
     @Autowired
     private UserService userService;
 
     @Override
-    protected StardustRepository<UserEntity, Long> getStardustRepository() {
+    protected StardustRepository<UserEntity> getStardustRepository() {
         return userRepository;
     }
 
@@ -36,9 +38,9 @@ class UserApplicationTests extends StardustTester<UserListModel, UserDetailModel
                 .builder()
                 .username("peyman")
                 .password("123456")
-                .personId(1L)
+                .personId(UUID.randomUUID())
                 .build();
-        Long stardustEntityId = userService.createStardustEntity(userDetailModel);
+        UUID stardustEntityId = userService.createStardustEntity(userDetailModel);
         return userService.getStardustEntity(stardustEntityId);
     }
 }
