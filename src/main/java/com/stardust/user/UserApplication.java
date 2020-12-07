@@ -1,10 +1,12 @@
 package com.stardust.user;
 
-import com.stardust.StardustApplication;
 import org.springframework.boot.SpringApplication;
-import org.springframework.context.annotation.Import;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.util.ResourceUtils;
 
-@Import(StardustApplication.class)
+@SpringBootApplication
+@PropertySource(ResourceUtils.CLASSPATH_URL_PREFIX + "application.properties")
 public class UserApplication {
 
     public static void main(String[] args) {
