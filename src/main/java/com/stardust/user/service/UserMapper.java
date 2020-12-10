@@ -6,10 +6,12 @@ import com.stardust.user.controller.UserDetailModel;
 import com.stardust.user.controller.UserListModel;
 import com.stardust.user.repository.UserEntity;
 import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
 
 /**
  * Created by Peyman Mahdikhani on 11/24/2020.
  */
 @Mapper(config = StardustMapperConfig.class)
 public interface UserMapper extends StardustMapper<UserListModel, UserDetailModel, UserEntity> {
+    UserMapper INSTANCE = Mappers.getMapper( UserMapper.class );
 }
