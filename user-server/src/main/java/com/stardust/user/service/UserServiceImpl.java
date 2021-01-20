@@ -5,6 +5,7 @@ import com.stardust.core.service.StardustMapper;
 import com.stardust.core.service.StardustServiceImpl;
 import com.stardust.user.controller.UserDetailModel;
 import com.stardust.user.controller.UserListModel;
+import com.stardust.user.feignclient.PersonFeignClientService;
 import com.stardust.user.repository.UserEntity;
 import com.stardust.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +22,7 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl extends StardustServiceImpl<UserListModel, UserDetailModel, UserEntity> implements UserService {
     private final UserMapper userMapper;
     private final UserRepository userRepository;
+    private final PersonFeignClientService personFeignClientService;
 
     @Override
     public StardustMapper<UserListModel, UserDetailModel, UserEntity> getStardustObjectMapper() {
